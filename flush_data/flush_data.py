@@ -1,4 +1,4 @@
-#!/home/uwcc-admin/curw_fcst_MME_utils/venv/bin/python3
+#!/home/uwcc-admin/curw_fcst_db_utils/venv/bin/python3
 import traceback
 
 from db_adapter.base import get_Pool, destroy_Pool
