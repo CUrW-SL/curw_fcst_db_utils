@@ -1,3 +1,10 @@
 ## CURW_FCST -- FLUSH DATE ##
 # flush outdated (older than 1 month) flo2d hourly run data
 30 22 * * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_data.log 2>&1
+
+
+###################
+# FLO2D WL SERIES #
+###################
+# flo2d 250 hourly run output wl series
+30 * * * * /home/uwcc-admin/curw_fcst_db_utils/wl_fcsts/create_wl_fields.py >> /home/uwcc-admin/curw_fcst_db_utils/wl_fcsts/flo2d_250_wl_series.log 2>&1
