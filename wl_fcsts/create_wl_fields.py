@@ -6,8 +6,10 @@ from datetime import datetime, timedelta
 
 from db_adapter.base import get_Pool, destroy_Pool
 from db_adapter.constants import COMMON_DATE_TIME_FORMAT
-from db_adapter.constants import CURW_FCST_PASSWORD, CURW_FCST_USERNAME, CURW_FCST_HOST, CURW_FCST_PORT, \
-    CURW_FCST_DATABASE
+from db_adapter.constants import set_db_config_file_path
+from db_adapter.constants import connection as con_params
+# CURW_FCST_PASSWORD, CURW_FCST_USERNAME, CURW_FCST_HOST, CURW_FCST_PORT, \
+#     CURW_FCST_DATABASE
 from db_adapter.curw_fcst.station import StationEnum
 from db_adapter.curw_fcst.station import get_flo2d_output_stations
 
@@ -55,8 +57,8 @@ def gen_flo2d_wl_series():
         traceback.print_exc()
 
     # Connect to the database
-    curw_fcst_pool = get_Pool(host=CURW_FCST_HOST, user=CURW_FCST_USERNAME, password=CURW_FCST_PASSWORD,
-                              port=CURW_FCST_PORT, db=CURW_FCST_DATABASE)
+    curw_fcst_pool = get_Pool(host=con_params.CURW_FCST_HOST, user=con_params.CURW_FCST_USERNAME, password=con_params.CURW_FCST_PASSWORD,
+                              port=con_params.CURW_FCST_PORT, db=con_params.CURW_FCST_DATABASE)
     connection = curw_fcst_pool.connection()
 
     flo2d_stations = get_flo2d_output_stations(pool=curw_fcst_pool, flo2d_model=STATION_TYPE)
@@ -95,6 +97,8 @@ def gen_flo2d_wl_series():
 
 
 if __name__=="__main__":
+
+    set_db_config_file_path('/home/uwcc-admin/curw_fcst_db_utils/db_adapter_config.json')
 
     try:
         # wrf_models = None
