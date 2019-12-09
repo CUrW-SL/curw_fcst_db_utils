@@ -65,7 +65,7 @@ def gen_flo2d_wl_series():
 
     try:
         for station in flo2d_stations.keys():
-            station_name = station
+            station_name = flo2d_stations.get(station)[3]
             lat = flo2d_stations.get(station)[1]
             lon = flo2d_stations.get(station)[2]
             station_id = flo2d_stations.get(station)[0]
