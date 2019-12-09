@@ -41,7 +41,7 @@ def create_wl_series(connection, lat, lon, station_name, station_id, expected_fg
         for result in results:
             wl_field.append([result.get('time'), result.get('value')])
 
-    create_csv('{}/{}_{}_{}_wl_series.csv'.format(wl_series_home, lat, lon, station_name), wl_field)
+    create_csv('{}/{}_{}_{}_wl_series.csv'.format(wl_series_home, lat, lon, station_name.replace(' ', '_')), wl_field)
 
 
 def gen_flo2d_wl_series():
