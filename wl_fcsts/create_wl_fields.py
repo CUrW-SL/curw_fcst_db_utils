@@ -1,11 +1,6 @@
 #!/home/uwcc-admin/curw_fcst_db_utils/venv/bin/python3
 import traceback
-import pymysql
-import json
-import sys
-import getopt
 import os
-import re
 import csv
 from datetime import datetime, timedelta
 
