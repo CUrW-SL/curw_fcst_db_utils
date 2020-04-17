@@ -1,4 +1,4 @@
-## CURW_FCST -- FLUSH DATE ##
+## CURW_FCST -- FLUSH DATA ##
 # flush outdated (older than 1 month) flo2d hourly run data
 30 22 * * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_data.log 2>&1
 
