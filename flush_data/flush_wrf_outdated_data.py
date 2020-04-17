@@ -21,7 +21,7 @@ def select_fgts_older_than_month(fgts):
 
     select_fgts = []
 
-    deadline = datetime.now() - timedelta(days=50)
+    deadline = datetime.now() - timedelta(days=60)
 
     for fgt in fgts:
         if fgt < deadline:
