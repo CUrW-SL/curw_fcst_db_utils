@@ -29,6 +29,8 @@ WRF_C_v4 = 6
 WRF_E_v4 = 7
 WRF_SE_v4 = 8
 
+WRF_T5_4_0 = 23
+
 
 def flush_run_entry_outdated(pool, hash_ids):
 
@@ -57,29 +59,29 @@ if __name__=="__main__":
         # pool = get_Pool(host=CURW_FCST_HOST, port=CURW_FCST_PORT,
         #                 user=CURW_FCST_USERNAME, password=CURW_FCST_PASSWORD, db=CURW_FCST_DATABASE)
 
-        wrf_A_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_A_4_0,
-                                          variable_id=None, unit_id=None, station_id=None,
-                                          start=None, end=None)
+        # wrf_A_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_A_4_0,
+        #                                   variable_id=None, unit_id=None, station_id=None,
+        #                                   start=None, end=None)
+        #
+        # flush_run_entry_outdated(pool=pool, hash_ids=wrf_A_hash_ids)
+        #
+        # wrf_C_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_C_4_0,
+        #                                         variable_id=None, unit_id=None, station_id=None,
+        #                                         start=None, end=None)
+        #
+        # flush_run_entry_outdated(pool=pool, hash_ids=wrf_C_hash_ids)
 
-        flush_run_entry_outdated(pool=pool, hash_ids=wrf_A_hash_ids)
-
-        wrf_C_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_C_4_0,
-                                                variable_id=None, unit_id=None, station_id=None,
-                                                start=None, end=None)
-
-        flush_run_entry_outdated(pool=pool, hash_ids=wrf_C_hash_ids)
-
-        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_E_4_0,
+        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="dwrf_gfs_d0_18", source_id=WRF_E_4_0,
                                                 variable_id=None, unit_id=None, station_id=None,
                                                 start=None, end=None)
 
         flush_run_entry_outdated(pool=pool, hash_ids=wrf_E_hash_ids)
 
-        wrf_SE_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_SE_4_0,
-                                                variable_id=None, unit_id=None, station_id=None,
-                                                start=None, end=None)
-
-        flush_run_entry_outdated(pool=pool, hash_ids=wrf_SE_hash_ids)
+        # wrf_SE_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_18", source_id=WRF_SE_4_0,
+        #                                         variable_id=None, unit_id=None, station_id=None,
+        #                                         start=None, end=None)
+        #
+        # flush_run_entry_outdated(pool=pool, hash_ids=wrf_SE_hash_ids)
 
 
     except Exception as e:

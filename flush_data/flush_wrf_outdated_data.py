@@ -31,6 +31,9 @@ WRF_C_v4 = 6
 WRF_E_v4 = 7
 WRF_SE_v4 = 8
 
+WRF_T5_4_0 = 23
+
+
 
 def select_fgts_older_than_month(fgts):
 
