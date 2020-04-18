@@ -11,10 +11,25 @@ from db_adapter.curw_fcst.timeseries import Timeseries
 # from db_adapter.constants import CURW_FCST_USERNAME, CURW_FCST_PORT, CURW_FCST_PASSWORD, CURW_FCST_HOST, \
 #     CURW_FCST_DATABASE
 
-WRF_A_ID_new = 19
-WRF_C_ID_new = 20
-WRF_E_ID_new = 22
-WRF_SE_ID_new = 21
+WRF_A_ID_4_1_2 = 19
+WRF_C_ID_4_1_2 = 20
+WRF_E_ID_4_1_2 = 22
+WRF_SE_ID_4_1_2 = 21
+
+WRF_C_4_0 = 12
+WRF_E_4_0 = 13
+WRF_A_4_0 = 15
+WRF_SE_4_0 = 16
+
+WRF_A_v3 = 1
+WRF_C_v3 = 2
+WRF_E_v3 = 3
+WRF_SE_v3 = 4
+
+WRF_A_v4 = 5
+WRF_C_v4 = 6
+WRF_E_v4 = 7
+WRF_SE_v4 = 8
 
 
 def select_fgts_older_than_month(fgts):
@@ -99,25 +114,25 @@ if __name__=="__main__":
         # pool = get_Pool(host=CURW_FCST_HOST, port=CURW_FCST_PORT,
         #                 user=CURW_FCST_USERNAME, password=CURW_FCST_PASSWORD, db=CURW_FCST_DATABASE)
 
-        wrf_A_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_A_ID_new,
+        wrf_A_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_A_ID_4_1_2,
                                           variable_id=None, unit_id=None, station_id=None,
                                           start=None, end=None)
 
         flush_timeseries_outdated(pool=pool, hash_ids=wrf_A_hash_ids)
 
-        wrf_C_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_C_ID_new,
+        wrf_C_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_C_ID_4_1_2,
                                                 variable_id=None, unit_id=None, station_id=None,
                                                 start=None, end=None)
 
         flush_timeseries_outdated(pool=pool, hash_ids=wrf_C_hash_ids)
 
-        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_E_ID_new,
+        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_E_ID_4_1_2,
                                                 variable_id=None, unit_id=None, station_id=None,
                                                 start=None, end=None)
 
         flush_timeseries_outdated(pool=pool, hash_ids=wrf_E_hash_ids)
 
-        wrf_SE_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_SE_ID_new,
+        wrf_SE_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d0_00", source_id=WRF_SE_ID_4_1_2,
                                                 variable_id=None, unit_id=None, station_id=None,
                                                 start=None, end=None)
 
