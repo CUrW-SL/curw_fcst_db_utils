@@ -71,7 +71,7 @@ if __name__=="__main__":
         #
         # flush_run_entry_outdated(pool=pool, hash_ids=wrf_C_hash_ids)
 
-        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="dwrf_gfs_d0_18", source_id=WRF_E_4_0,
+        wrf_E_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="gfs_d1_18", source_id=None,
                                                 variable_id=None, unit_id=None, station_id=None,
                                                 start=None, end=None)
 
