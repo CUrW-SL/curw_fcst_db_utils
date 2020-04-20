@@ -70,14 +70,17 @@ def flush_timeseries_outdated(pool, hash_ids):
     for id in hash_ids:
         fgts = get_distinct_fgts_for_given_id(pool=pool, id_=id)
 
-        outdated_fgts = select_fgts_older_than_month(fgts)
-        count += 1
-        for fgt in outdated_fgts:
-            fgts.remove(fgt)
-            TS.delete_timeseries(id_=id, fgt=fgt)
-            print(count, id, fgt)
+        if fgts is not None:
+            outdated_fgts = select_fgts_older_than_month(fgts)
+            count += 1
 
-        TS.update_start_date(id_=id, start_date=min(fgts), force=True)
+            if outdated_fgts is not None:
+                for fgt in outdated_fgts:
+                    fgts.remove(fgt)
+                    TS.delete_timeseries(id_=id, fgt=fgt)
+                    print(count, id, fgt)
+
+                TS.update_start_date(id_=id, start_date=min(fgts), force=True)
 
     print("{} of hash ids are deleted.".format(count))
 
@@ -93,14 +96,17 @@ def flush_timeseries_given_range(pool, hash_ids, start, end):
     for id in hash_ids:
         fgts = get_distinct_fgts_for_given_id(pool=pool, id_=id)
 
-        in_range_fgts = select_fgts_within_a_range(fgts, start, end)
-        count += 1
-        for fgt in in_range_fgts:
-            fgts.remove(fgt)
-            TS.delete_timeseries(id_=id, fgt=fgt)
-            print(count, id, fgt)
+        if fgts is not None:
+            in_range_fgts = select_fgts_within_a_range(fgts, start, end)
+            count += 1
 
-        TS.update_start_date(id_=id, start_date=min(fgts), force=True)
+            if in_range_fgts is not None:
+                for fgt in in_range_fgts:
+                    fgts.remove(fgt)
+                    TS.delete_timeseries(id_=id, fgt=fgt)
+                    print(count, id, fgt)
+
+                TS.update_start_date(id_=id, start_date=min(fgts), force=True)
 
     print("{} of hash ids are deleted.".format(count))
 
@@ -128,9 +134,9 @@ if __name__=="__main__":
         #                 user=CURW_FCST_USERNAME, password=CURW_FCST_PASSWORD, db=CURW_FCST_DATABASE)
 
 
-        sim_tag_list = ["gfs_d0_00", "gfs_d0_18",
-                        "dwrf_gfs_d1_06", "dwrf_gfs_d1_12", "dwrf_gfs_d1_18", "dwrf_gfs_d1_00",
-                        "mwrf_gfs_d0_18"]
+        sim_tag_list = ["dwrf_gfs_d1_06", "dwrf_gfs_d1_12", "dwrf_gfs_d1_18", "dwrf_gfs_d1_00",
+                        "mwrf_gfs_d0_18",
+                        "gfs_d0_00", "gfs_d0_18"]
 
         for sim_tag in sim_tag_list:
             print("sim_tag:", sim_tag)
