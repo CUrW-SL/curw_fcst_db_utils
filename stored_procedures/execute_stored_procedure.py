@@ -61,7 +61,7 @@ if __name__=="__main__":
                 for result in results:
                     procedure_output.append([result.get('time'), result.get('value')])
 
-            file_name= "flo2d_150_discharge_{}.cdv".format(output_file_names[i])
+            file_name= "flo2d_150_discharge_{}.csv".format(output_file_names[i])
 
             create_csv(os.path.join(output_file_dir, file_name), procedure_output)
 
