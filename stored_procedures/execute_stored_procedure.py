@@ -7,7 +7,7 @@ from db_adapter.constants import set_db_config_file_path
 from db_adapter.constants import connection as con_params
 
 ROOT_DIR = "/home/uwcc-admin/curw_fcst_db_utils"
-output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150"
+output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150/with_interventions"
 
 
 def create_csv(file_name, data):
@@ -33,10 +33,20 @@ if __name__=="__main__":
                                  password=con_params.CURW_FCST_PASSWORD,
                                  port=con_params.CURW_FCST_PORT, db=con_params.CURW_FCST_DATABASE)
 
-        procedure_inputs = [['179', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
-                            ['166', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"]]
+        procedure_inputs = [['510', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
+                            ['581', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
+                            ['651', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
+                            ['2561', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
+                            ['10195', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"],
+                            ['1782', 3, "event_2010_Nov_with_intervention", "2020-05-14 13:17:57"]]
+                            # [['1782', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
+                            # ['10195', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
+                            # ['2561', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
+                            # ['651', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
+                            # ['581', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
+                            # ['510', 3, "event_2010_Nov", "2020-05-14 13:17:57"]]
 
-        output_file_names = ["nagalama_stree", "wellawatta_canal"]
+        output_file_names = ["wellawatta_canal", "dehiwala_canal", "mutwal_outfall", "kittampahuwa", "ambatale_outfall", "nagalagam_street"]
 
         procedure_output = [['time', 'value']]
 
