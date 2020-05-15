@@ -7,7 +7,7 @@ from db_adapter.constants import set_db_config_file_path
 from db_adapter.constants import connection as con_params
 
 ROOT_DIR = "/home/uwcc-admin/curw_fcst_db_utils"
-output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150/without_interventions"
+output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150/with_interventions"
 
 
 def create_csv(file_name, data):
