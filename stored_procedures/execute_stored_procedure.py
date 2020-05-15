@@ -7,7 +7,7 @@ from db_adapter.constants import set_db_config_file_path
 from db_adapter.constants import connection as con_params
 
 ROOT_DIR = "/home/uwcc-admin/curw_fcst_db_utils"
-output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150/without_interventions"
+output_file_dir = "/mnt/disks/curwsl_nfs/data/Nov2010Event/flo2d_150/with_interventions"
 
 
 def create_csv(file_name, data):
@@ -33,20 +33,17 @@ if __name__=="__main__":
                                  password=con_params.CURW_FCST_PASSWORD,
                                  port=con_params.CURW_FCST_PORT, db=con_params.CURW_FCST_DATABASE)
 
-        procedure_inputs = [['510', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['581', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['651', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['2561', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['10195', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['1782', 3, "event_2010_Nov", "2018-04-06 14:11:13"]]
-                            # [['1782', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
-                            # ['10195', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
-                            # ['2561', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
-                            # ['651', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
-                            # ['581', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
-                            # ['510', 3, "event_2010_Nov", "2020-05-14 13:17:57"]]
+        procedure_inputs = [[497, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [356, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [736, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [10340, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [6902, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [2985, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            [1675, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"]]
 
-        output_file_names = ["wellawatta_canal", "dehiwala_canal", "mutwal_outfall", "kittampahuwa", "ambatale_outfall", "nagalagam_street"]
+        output_file_names = ["497_Wellawatta_Canal-St_Peters_College_DIS", "356_Dehiwala_Canal_DIS",
+                             "736_Mutwal_Outfall_DIS", "10340_Ambatale_Outfall_DIS", "6902_Salalihini_DIS",
+                             "2985_Kiththampahuwa_DIS", "1675_Nagalagam_Street"]
 
         connection = curw_fcst_pool.connection()
 

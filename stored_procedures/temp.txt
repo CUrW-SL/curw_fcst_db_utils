@@ -1,0 +1,44 @@
+==========
+250
+==========
+
+[[179, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[220, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[261, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[616, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[991, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[2395, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[3580, 3, "event_2010_Nov", "2018-04-06 14:11:13"]]
+
+[[179, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[220, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[261, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[616, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[991, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[2395, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"],
+[3580, 3, "event_2010_Nov_with_intervention", "2018-04-06 14:11:13"]]
+
+["179_Wellawatta_Canal-St_Peters_College", "220_Dehiwala_Canal", "261_Mutwal_Outfall", "616_Nagalagam_Street", "991_Kalupalama", "2395_Kelani_Mulla_Outfall", "3580_Ambatale_Outfull1"]
+
+==========
+150
+==========
+
+[[497, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[356, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[736, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[10340, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[6902, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[2985, 3, "event_2010_Nov", "2018-04-06 14:11:13"],
+[1675, 3, "event_2010_Nov", "2018-04-06 14:11:13"]]
+
+[[497, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[356, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[736, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[10340, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[6902, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[2985, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+[1675, 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"]]
+
+
+["497_Wellawatta_Canal-St_Peters_College_DIS", "356_Dehiwala_Canal_DIS", "736_Mutwal_Outfall_DIS", "10340_Ambatale_Outfall_DIS", "6902_Salalihini_DIS", "2985_Kiththampahuwa_DIS", "1675_Nagalagam_Street"]
