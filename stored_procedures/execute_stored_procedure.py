@@ -33,12 +33,12 @@ if __name__=="__main__":
                                  password=con_params.CURW_FCST_PASSWORD,
                                  port=con_params.CURW_FCST_PORT, db=con_params.CURW_FCST_DATABASE)
 
-        procedure_inputs = [['510', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['581', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['651', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['2561', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['10195', 3, "event_2010_Nov", "2018-04-06 14:11:13"],
-                            ['1782', 3, "event_2010_Nov", "2018-04-06 14:11:13"]]
+        procedure_inputs = [['510', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            ['581', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            ['651', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            ['2561', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            ['10195', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"],
+                            ['1782', 3, "event_2010_Nov_with_intervention", "2020-05-14 18:37:22"]]
                             # [['1782', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
                             # ['10195', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
                             # ['2561', 3, "event_2010_Nov", "2020-05-14 13:17:57"],
