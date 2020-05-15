@@ -48,11 +48,11 @@ if __name__=="__main__":
 
         output_file_names = ["wellawatta_canal", "dehiwala_canal", "mutwal_outfall", "kittampahuwa", "ambatale_outfall", "nagalagam_street"]
 
-        procedure_output = [['time', 'value']]
-
         connection = curw_fcst_pool.connection()
 
         for i in range(len(procedure_inputs)):
+
+            procedure_output = [['time', 'value']]
 
             with connection.cursor() as cursor1:
                 cursor1.callproc('get_150_fcsts_for_given_grid', tuple(procedure_inputs[i]))
