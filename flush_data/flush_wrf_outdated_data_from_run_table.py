@@ -51,7 +51,7 @@ if __name__=="__main__":
 
     try:
 
-        set_db_config_file_path('/home/uwcc-admin/curw_fcst_MME_utils/db_adapter_config.json')
+        set_db_config_file_path('/home/uwcc-admin/curw_fcst_db_utils/db_adapter_config.json')
 
         pool = get_Pool(host=connection.CURW_FCST_HOST, port=connection.CURW_FCST_PORT, user=connection.CURW_FCST_USERNAME,
                         password=connection.CURW_FCST_PASSWORD, db=connection.CURW_FCST_DATABASE)
