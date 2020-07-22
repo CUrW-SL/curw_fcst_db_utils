@@ -13,6 +13,7 @@ from db_adapter.curw_fcst.timeseries import Timeseries
 
 FLO2D_250_ID = 9
 FLO2D_150_ID = 10
+FLO2D_150_v2_ID = 24
 
 
 def select_fgts_older_than_month(fgts):
@@ -74,6 +75,12 @@ if __name__=="__main__":
                                                     start=None, end=None)
 
         flush_timeseries(pool=pool, hash_ids=flo2d_150_hash_ids)
+
+        flo2d_150_v2_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=FLO2D_150_v2_ID,
+                                                    variable_id=None, unit_id=None, station_id=None,
+                                                    start=None, end=None)
+
+        flush_timeseries(pool=pool, hash_ids=flo2d_150_v2_hash_ids)
 
     except Exception as e:
         print('An exception occurred.')
