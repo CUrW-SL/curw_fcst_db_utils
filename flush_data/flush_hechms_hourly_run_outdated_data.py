@@ -12,8 +12,10 @@ from db_adapter.curw_fcst.timeseries import Timeseries
 #     CURW_FCST_DATABASE
 
 HECHMS_DISTRIBUTED = 17
-HECHMS_EVENT = 25
+HECHMS_DISTRIBUTED_EVENT = 25
 HECHMS_SINGLE = 11
+HECHMS_LUMPED_CONTINUOUS = 27
+HECHMS_LUMPED_EVENT = 28
 
 
 def select_fgts_older_than_month(fgts):
@@ -56,7 +58,7 @@ if __name__=="__main__":
 
     try:
 
-        set_db_config_file_path('/home/uwcc-admin/curw_fcst_MME_utils/db_adapter_config.json')
+        set_db_config_file_path('/home/uwcc-admin/curw_fcst_db_utils/db_adapter_config.json')
 
         pool = get_Pool(host=connection.CURW_FCST_HOST, port=connection.CURW_FCST_PORT, user=connection.CURW_FCST_USERNAME,
                         password=connection.CURW_FCST_PASSWORD, db=connection.CURW_FCST_DATABASE)
@@ -64,23 +66,15 @@ if __name__=="__main__":
         # pool = get_Pool(host=CURW_FCST_HOST, port=CURW_FCST_PORT,
         #                 user=CURW_FCST_USERNAME, password=CURW_FCST_PASSWORD, db=CURW_FCST_DATABASE)
 
-        hechms_single_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=HECHMS_SINGLE,
+        source_list = [HECHMS_SINGLE, HECHMS_DISTRIBUTED, HECHMS_DISTRIBUTED_EVENT, HECHMS_LUMPED_CONTINUOUS, HECHMS_LUMPED_EVENT]
+
+        for source in source_list:
+            hechms_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=source,
                                           variable_id=None, unit_id=None, station_id=None,
                                           start=None, end=None)
 
-        flush_timeseries(pool=pool, hash_ids=hechms_single_hash_ids)
-
-        hechms_dis_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=HECHMS_DISTRIBUTED,
-                                                    variable_id=None, unit_id=None, station_id=None,
-                                                    start=None, end=None)
-
-        flush_timeseries(pool=pool, hash_ids=hechms_dis_hash_ids)
-
-        hechms_event_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=HECHMS_EVENT,
-                                                     variable_id=None, unit_id=None, station_id=None,
-                                                     start=None, end=None)
-
-        flush_timeseries(pool=pool, hash_ids=hechms_event_hash_ids)
+            if hechms_hash_ids is not None and len(hechms_hash_ids) > 0:
+                flush_timeseries(pool=pool, hash_ids=hechms_hash_ids)
 
 
     except Exception as e:

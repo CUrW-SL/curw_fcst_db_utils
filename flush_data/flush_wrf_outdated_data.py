@@ -144,7 +144,8 @@ if __name__=="__main__":
                                                     variable_id=None, unit_id=None, station_id=None,
                                                     start=None, end=None)
 
-            flush_timeseries_outdated(pool=pool, hash_ids=wrf_hash_ids)
+            if wrf_hash_ids is not None and len(wrf_hash_ids) > 0:
+                flush_timeseries_outdated(pool=pool, hash_ids=wrf_hash_ids)
 
 
     except Exception as e:

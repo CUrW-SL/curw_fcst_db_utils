@@ -68,19 +68,22 @@ if __name__=="__main__":
                                           variable_id=None, unit_id=None, station_id=None,
                                           start=None, end=None)
 
-        flush_timeseries(pool=pool, hash_ids=flo2d_250_hash_ids)
+        if flo2d_250_hash_ids is not None and len(flo2d_250_hash_ids) > 0:
+            flush_timeseries(pool=pool, hash_ids=flo2d_250_hash_ids)
 
         flo2d_150_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=FLO2D_150_ID,
                                                     variable_id=None, unit_id=None, station_id=None,
                                                     start=None, end=None)
 
-        flush_timeseries(pool=pool, hash_ids=flo2d_150_hash_ids)
+        if flo2d_150_hash_ids is not None and len(flo2d_150_hash_ids) > 0:
+            flush_timeseries(pool=pool, hash_ids=flo2d_150_hash_ids)
 
         flo2d_150_v2_hash_ids = get_curw_fcst_hash_ids(pool=pool, sim_tag="hourly_run", source_id=FLO2D_150_v2_ID,
                                                     variable_id=None, unit_id=None, station_id=None,
                                                     start=None, end=None)
 
-        flush_timeseries(pool=pool, hash_ids=flo2d_150_v2_hash_ids)
+        if flo2d_150_v2_hash_ids is not None and len(flo2d_150_v2_hash_ids) > 0:
+            flush_timeseries(pool=pool, hash_ids=flo2d_150_v2_hash_ids)
 
     except Exception as e:
         print('An exception occurred.')
