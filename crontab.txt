@@ -3,6 +3,10 @@
 30 22 * * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_flo2d_hourly_run_data.log 2>&1
 # flush outdated (older than 60 days) WRF run data
 30 1 */20 * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_wrf_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_outdated_wrf_data.log 2>&1
+# flush outdated (older than 1 month) hechms hourly run data
+00 23 * * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_hechms_hourly_run_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_hechms_hourly_run_data.log 2>&1
+# flush outdated (older than 1 month) mike hourly run data
+30 23 * * * /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_mike_hourly_run_outdated_data.py >> /home/uwcc-admin/curw_fcst_db_utils/flush_data/flush_mike_hourly_run_data.log 2>&1
 
 ###################
 # FLO2D WL SERIES #
